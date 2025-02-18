@@ -1,0 +1,281 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  color: $white;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background-color: $header-bg;
+  //Glassmorphism
+  // border: 1px solid rgba(255, 255, 255, 0.25);
+  // background-color: rgba(255, 255, 255, 0.45);
+  // box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  // backdrop-filter: blur(12x);
+
+  //字形設定
+
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-logo {
+    width: 15rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-links {
+    display: flex;
+    gap: 2rem;
+    letter-spacing: 0.1rem;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $white;
+        transition: color 0.35s;
+        padding: 0.5rem 0.7rem;
+        position: relative;
+
+        text-transform: uppercase;
+        transition: all 0.5s;
+        &:hover {
+          background-color: $white;
+          color: $header-bg;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          width: 12px;
+          height: 12px;
+          border: 3px solid $white;
+          border-width: 0 0 3px 3px;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover:before {
+          opacity: 1;
+          bottom: -7px;
+          left: -7px;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          width: 12px;
+          height: 12px;
+          border: 3px solid $white;
+          border-width: 3px 3px 0 0;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover:after {
+          opacity: 1;
+          top: -7px;
+          right: -7px;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  &-auth-slide {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+    padding-left: 2rem;
+    width: 100%;
+
+    &-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .language-dropdown {
+      position: relative;
+
+      .dropdown-toggle {
+        //暫時隱藏以備日後需要
+        display: none;
+
+        position: relative;
+        padding-right: 1.5rem;
+        background-color: transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        &::after {
+          content: "▼"; /* 使用 Unicode 箭頭符號 */
+          position: absolute;
+          right: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 0.6rem;
+          color: inherit;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 250%;
+        right: -30%;
+        text-align: left;
+        background-color: $white;
+        border: 1px solid $black;
+        border-radius: 5px;
+        list-style: none;
+        padding: 0.5rem 0;
+        display: none; // 預設不顯示
+        z-index: 30;
+
+        li {
+          padding: 0.5rem 1rem;
+
+          &:hover {
+            background-color: $light;
+            transition: 0.35s;
+          }
+
+          a {
+            text-decoration: none;
+            color: $black;
+            display: block;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      // 當 .open 類別存在時顯示 dropdown
+      &.open .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+// 小螢幕時隱藏 navbar-auth
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    &-links {
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      border-bottom: 1px solid $white;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .navbar-auth {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: $white;
+        transition: 0.3s;
+      }
+    }
+
+    // 背景遮罩
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+      display: none; // 初始狀態
+
+      &.visible {
+        display: block; // 先讓它可見
+      }
+
+      &.open {
+        opacity: 1;
+      }
+    }
+
+    // 右側滑出選單
+    .navbar-auth-slide {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 250px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding: 2rem;
+      gap: 1rem;
+      transition: right 0.35s ease-in-out;
+      z-index: 20;
+
+      background-color: $header-bg;
+      //Glassmorphism
+      // border: 1px solid rgba(255, 255, 255, 0.25);
+      // background-color: rgba(255, 255, 255, 0.45);
+      // box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      // backdrop-filter: blur(12x);
+
+      &-box {
+        flex-direction: column;
+      }
+
+      &.open {
+        right: 0;
+      }
+
+      .close-menu {
+        display: flex;
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}

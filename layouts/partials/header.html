@@ -1,0 +1,34 @@
+<header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="{{ .Site.Params.logo }}" alt="Logo" class="logo">
+      </div>
+    </div>
+  
+    <button class="hamburger-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+  
+    <div class="menu-overlay"></div>
+  
+    <div class="navbar-auth-slide">
+      <button class="close-menu">×</button>
+      <ul class="navbar-links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+  
+      <div class="language-dropdown">
+        <button class="dropdown-toggle">{{ i18n "language" }}</button>
+        <ul class="dropdown-menu">
+          {{ range .Site.Languages }}
+          <li data-lang="{{ .Lang }}">{{ .LanguageName }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </header>
+  

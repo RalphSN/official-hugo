@@ -1,0 +1,21 @@
+<section class="works" id="works">
+    <div class="works-header">
+      <h2 class="works-title">精選成果</h2>
+    </div>
+    <div class="works-slider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {{ range .Site.Data.works }}
+          <div class="swiper-slide">
+            <img src="{{ .img }}" alt="Work {{ .id }}" class="works-image">
+          </div>
+          {{ end }}
+        </div>
+        <!-- Swiper 按鈕 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  

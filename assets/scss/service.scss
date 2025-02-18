@@ -1,0 +1,155 @@
+.service {
+  @include flex-center;
+  justify-content: start;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/service-ex.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  color: $white;
+  padding-top: 30vh;
+
+  .service-title {
+    color: $title;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .service-dots {
+    @include flex-center;
+    width: 100%;
+    height: auto;
+    gap: 2.5rem;
+    margin: 0.5rem auto;
+  }
+
+  .cust { background-color: $cust; }
+  .sdk { background-color: $sdk; }
+  .design { background-color: $design; }
+  .develop { background-color: $develop; }
+  .pub { background-color: $pub; }
+  .opt { background-color: $opt; }
+  
+  .service-item.cust { background-color: $cust-bk; }
+  .service-item.sdk { background-color: $sdk-bk; }
+  .service-item.design { background-color: $design-bk; }
+  .service-item.develop { background-color: $develop-bk; }
+  .service-item.pub { background-color: $pub-bk; }
+  .service-item.opt { background-color: $opt-bk; }
+  
+  .service-word.cust-word { color: $cust; }
+  .service-word.sdk-word { color: $sdk; }
+  .service-word.design-word { color: $design; }
+  .service-word.develop-word { color: $develop; }
+  .service-word.pub-word { color: $pub; }
+  .service-word.opt-word { color: $opt; }
+  
+  .dot {
+    width: 22px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  .service-item-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+
+  .service-item {
+    @include flex-center;
+    width: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 55px;
+      background-color: inherit;
+      clip-path: polygon(100% 50%, 0 0, 0 100%);
+      right: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
+
+  .service-item-inner {
+    @include flex-center;
+    justify-content: start;
+    flex-direction: column;
+    width: 160px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: $white;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    padding-top: 1rem;
+    z-index: 5;
+  }
+
+  .service-item-icon {
+    width: 45px;
+    height: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .service-word {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .service {
+    padding-top: 10rem;
+    .service-title {
+      margin-bottom: 2rem;
+    }
+    .service-dots {
+      margin-bottom: 5rem;
+    }
+    .service-item-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      .service-item {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .service {
+    padding-top: 5rem;
+    .service-title {
+      font-size: 2.2rem;
+    }
+    .service-dots {
+      scale: .8;
+      margin-bottom: 0;
+    }
+    .service-item-container {
+      grid-template-columns: repeat(2, 1fr);
+      scale: .8;
+      margin-top: 0;
+    }
+  }
+}

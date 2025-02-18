@@ -1,0 +1,21 @@
+baseURL = "https://example.com/"
+languageCode = "zh-TW"
+title = "遊戲夢想實踐者"
+
+[params]
+logo = "/images/logo-thin.png"
+
+[menu]
+  [[menu.main]]
+    name = "關於我們"
+    url = "#about"
+  [[menu.main]]
+    name = "服務"
+    url = "#service"
+  [[menu.main]]
+    name = "作品"
+    url = "#works"
+  [[menu.main]]
+    name = "聯絡我們"
+    url = "#footer"
+

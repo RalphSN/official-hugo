@@ -1,0 +1,116 @@
+.works {
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 2rem 8rem;
+  padding-top: 10rem;
+  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/works-ex.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .works-header {
+    margin-bottom: 1rem;
+  }
+
+  .works-title {
+    display: inline-block;
+    color: $title-dark;
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: 5rem;
+    position: relative;
+  }
+  .works-title::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.9rem;
+    aspect-ratio: 1/1;
+    background-color: $white;
+    border-radius: 50%;
+    border: 0.45rem solid $title-dot;
+    margin-right: 1rem;
+  }
+
+  .works-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .swiper {
+      width: 100%;
+      padding-bottom: 4rem;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .works-image {
+      width: 85%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 40px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 45%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .works {
+    padding: 2rem;
+    padding-top: 8rem;
+    .works-header {
+      @include flex-center;
+      .works-title {
+        margin: 4rem auto;
+        scale: 1.5;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    .works-slider {
+      max-width: 900px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .works {
+    .works-slider {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .works {
+    padding: 8rem 0;
+    .works-header {
+      .works-title {
+        scale: 1;
+      }
+    }
+    .works-slider {
+      width: 430px;
+      display: inline;
+    }
+  }
+}

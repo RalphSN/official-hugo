@@ -1,0 +1,13 @@
+<section class="about" id="about">
+    <div class="about-pic">
+      <img src="{{ .Site.Data.about.imgUrl }}" alt="團隊信念">
+    </div>
+    <div class="about-content">
+      <h2 class="about-title en">{{ .Site.Data.about.titleEn }}</h2>
+      <h2 class="about-title ch">{{ .Site.Data.about.titleCh }}</h2>
+      {{ range .Site.Data.about.texts }}
+      <p class="about-text">{{ . }}</p>
+      {{ end }}
+    </div>
+  </section>
+  

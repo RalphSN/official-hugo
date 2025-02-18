@@ -1,0 +1,6 @@
+{{ define "main" }}
+    <h2>Welcome to aaa {{ .Site.Title }}</h2>
+    {{ range .Pages }}
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ end }}
+{{ end }}

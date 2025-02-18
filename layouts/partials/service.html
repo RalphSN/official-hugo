@@ -1,0 +1,15 @@
+<section class="service" id="service">
+    <h2 class="service-title">專屬於您的最佳選擇</h2>
+    <div class="service-item-container">
+      {{ range .Site.Data.services }}
+      <div class="service-item">
+        <div class="service-item-icon">
+          <img src="{{ .icon }}" alt="{{ .name }}">
+        </div>
+        <span class="service-word">{{ .name }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  
+  
