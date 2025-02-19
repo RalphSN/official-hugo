@@ -1,13 +1,24 @@
 <footer class="footer" id="footer">
-    <div class="footer-info">
-      <div class="footer-logo">
-        <img src="{{ .Site.Params.logo }}" alt="公司標誌">
-      </div>
-      <address class="footer-address">
-        <p>10690</p>
-        <p>台北市大安區敦化南路一段205號14樓之8 ( 1608室 )</p>
-        <p>TEL <a href="tel:0227318957"> 02-2731-8957</a></p>
-      </address>
+  <div class="footer-info">
+    <div class="footer-logo">
+      <img 
+        src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/logo-thin.png" 
+        alt="公司標誌" 
+      />
     </div>
-  </footer>
-  
+    <address class="footer-address">
+      <p>10690</p>
+      <p>台北市大安區敦化南路一段205號14樓之8 ( 1608室 )</p>
+      <p>TEL <a href="tel:0227318957"> 02-2731-8957</a></p>
+    </address>
+  </div>
+
+  <div class="footer-item">
+    <h3 class="footer-item-title">服務項目</h3>
+    <nav class="footer-links">
+      {{ range site.Data.footer.services }}
+        <a href="#" class="footer-link">{{ . }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,27 @@
+.cover-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #3a9bdc, #0072bc);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  
+    &:hover {
+      // background: linear-gradient(to bottom, #0072bc, #005f99);
+      // transform: translateY(-2px);
+      animation: pulse 1s;
+      box-shadow: 0 0 0 2em transparent;
+  
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 #3a9bdc;
+        }
+      }
+    }
+  }

@@ -1,15 +1,24 @@
 <section class="service" id="service">
-    <h2 class="service-title">專屬於您的最佳選擇</h2>
-    <div class="service-item-container">
-      {{ range .Site.Data.services }}
-      <div class="service-item">
-        <div class="service-item-icon">
-          <img src="{{ .icon }}" alt="{{ .name }}">
+  <h2 class="service-title">專屬於您的最佳選擇</h2>
+
+  <div class="service-dots">
+    {{ range site.Data.services.services }}
+      <div class="dot {{ .key }}" title="{{ .label }}"></div>
+    {{ end }}
+  </div>
+
+  <div class="service-item-container">
+    {{ range site.Data.services.services }}
+      <div class="service-item {{ .key }}">
+        <div class="service-item-inner">
+          <div class="service-item-icon">
+            <img src="{{ site.Data.services.baseUrl }}/{{ .key }}.svg" alt="icon">
+          </div>
+          <span class="service-word {{ .key }}-word">{{ .label }}</span>
         </div>
-        <span class="service-word">{{ .name }}</span>
       </div>
-      {{ end }}
-    </div>
-  </section>
-  
+    {{ end }}
+  </div>
+</section>
+
   

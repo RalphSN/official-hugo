@@ -1,0 +1,21 @@
+baseUrl: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/service-item"
+
+services:
+  - key: "cust"
+    label: "專業客服支援"
+
+  - key: "sdk"
+    label: "高效SDK整合"
+
+  - key: "design"
+    label: "創新軟體設計"
+
+  - key: "develop"
+    label: "定製遊戲開發"
+
+  - key: "pub"
+    label: "遊戲發行服務"
+
+  - key: "opt"
+    label: "平台設計優化"
+

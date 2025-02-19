@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Site.Title }}</title>
-  
-  {{ $styles := resources.Get "scss/main.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-</head>
-<body>
-  {{ partial "header.html" . }}
-  
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Site.Title }}</title>
 
-  {{ partial "footer.html" . }}
+    {{/*  引入 Google Fonts  */}}
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="/js/main.js"></script>
-</body>
+    {{/*  引入Swiper  */}}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    {{/*  引入自有scss  */}}
+    {{ $styles := resources.Get "scss/main.scss" | css.Sass | resources.Minify |
+    resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+
+  </head>
+  <body>
+    <pre>{{ printf "%#v" .Site.Data.services }}</pre>
+
+    {{ partial "header.html" . }}
+
+    <main>{{ block "main" . }}{{ end }}</main>
+
+    {{ partial "footer.html" . }}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+  </body>
 </html>

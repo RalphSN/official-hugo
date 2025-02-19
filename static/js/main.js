@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     // **🔹 漢堡選單功能**
     const menuButton = document.querySelector(".hamburger-menu");
     const menu = document.querySelector(".navbar-auth-slide");
@@ -33,29 +33,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // **🔹 Swiper (輪播) 功能**
-    const slides = document.querySelectorAll(".swiper-slide");
-    const prevButton = document.querySelector(".swiper-button-prev");
-    const nextButton = document.querySelector(".swiper-button-next");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? "block" : "none";
+    // **🔹 Swiper.js 輪播功能**
+    const worksSlider = document.querySelector(".works-slider");
+    if (worksSlider) {
+        new Swiper(".works-slider", {
+            loop: true,
+            spaceBetween: 20,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
         });
+        console.log("Swiper initialized!");  // 用於除錯
+    } else {
+        console.error("Swiper container not found!");
     }
-
-    if (slides.length > 0 && prevButton && nextButton) {
-        prevButton.addEventListener("click", function () {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        nextButton.addEventListener("click", function () {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        });
-
-        showSlide(currentIndex);
-    }
-});
+};

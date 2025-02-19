@@ -3,19 +3,23 @@ languageCode = "zh-TW"
 title = "遊戲夢想實踐者"
 
 [params]
-logo = "/images/logo-thin.png"
+logo = "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/logo-thin.png"
 
 [menu]
   [[menu.main]]
     name = "關於我們"
     url = "#about"
+    weight = 1
   [[menu.main]]
-    name = "服務"
+    name = "服務項目"
     url = "#service"
+    weight = 2
   [[menu.main]]
-    name = "作品"
+    name = "作品資訊"
     url = "#works"
+    weight = 3
   [[menu.main]]
     name = "聯絡我們"
     url = "#footer"
+    weight = 4
 

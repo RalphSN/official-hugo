@@ -1,9 +1,16 @@
 <section class="cover" id="cover">
   <div class="cover-image-container">
-    <img src="{{ .Site.Params.logo }}" alt="logo">
+    <img
+      src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/logo-thin.png"
+      alt="logo"
+    />
   </div>
   <div class="cover-content">
-    <h1 class="cover-title">{{ .Params.title }}</h1>
-    <p class="cover-description">{{ .Params.description }}</p>
+    <h1 class="cover-title">{{ .Params.title | default "Welcome" }}</h1>
+    <p class="cover-description">{{ .Params.description | default "Your journey begins here" }}</p>
+  </div>
+  <div class="cover-btn-container">
+    {{ partial "button.html" (dict "text" "了解更多" "href" "#") }}
+    {{ partial "button.html" (dict "text" "聯絡我們" "href" "#") }}
   </div>
 </section>

@@ -23,6 +23,7 @@
     margin-left: 5rem;
     position: relative;
   }
+
   .works-title::before {
     content: "";
     position: absolute;
@@ -37,14 +38,22 @@
     margin-right: 1rem;
   }
 
+  /* 🔹 Swiper.js 輪播樣式 */
   .works-slider {
     max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden;
+    position: relative;
+
 
     .swiper {
       width: 100%;
       padding-bottom: 4rem;
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
     }
 
     .swiper-slide {
@@ -62,27 +71,66 @@
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     }
 
+    /* 🔹 Swiper 導航按鈕 */
     .swiper-button-next,
     .swiper-button-prev {
-      top: 45%;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.35s ease;
+      &:hover {
+        text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+        transform: scale(1.05);
+      }
+    }
+
+    .swiper-button-next {
+      right: -8px;
+    }
+
+    .swiper-button-prev {
+      left: -8px;
+    }
+
+
+    /* 🔹 Swiper 分頁點 */
+    .swiper-pagination {
+      bottom: 10px !important;
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        transition: 0.3s ease;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: var(--swiper-navigation-color, var(--swiper-theme-color));;
+      }
     }
   }
 }
 
+/* 🔹 RWD 響應式調整 */
 @media (max-width: 1024px) {
   .works {
     padding: 2rem;
     padding-top: 8rem;
+
     .works-header {
       @include flex-center;
       .works-title {
         margin: 4rem auto;
-        scale: 1.5;
+        transform: scale(1.5);
         &::before {
           display: none;
         }
       }
     }
+
     .works-slider {
       max-width: 900px;
     }
@@ -94,7 +142,7 @@
     .works-slider {
       .swiper-button-next,
       .swiper-button-prev {
-        display: none;
+        display: none; /* 在小螢幕隱藏 Swiper 按鈕 */
       }
     }
   }
@@ -105,12 +153,12 @@
     padding: 8rem 0;
     .works-header {
       .works-title {
-        scale: 1;
+        transform: scale(1);
       }
     }
     .works-slider {
-      width: 430px;
-      display: inline;
+      width: 100%;
+      display: block;
     }
   }
 }
