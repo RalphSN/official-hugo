@@ -5,32 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Site.Title }}</title>
 
-    {{/*  引入 Google Fonts  */}}
+    {{/* 引入 Google Fonts */}}
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    {{/*  引入Swiper  */}}
+    {{/* 引入Swiper */}}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-    {{/*  引入自有scss  */}}
-    {{ $styles := resources.Get "scss/main.scss" | css.Sass | resources.Minify |
-    resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
-
+    {{/* 引入自有scss */}} {{ $styles := resources.Get "scss/main.scss" | toCSS
+    | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="/css/main.min.css" />
   </head>
   <body>
-
     {{ partial "header.html" . }}
 
     <main>{{ block "main" . }}{{ end }}</main>
 
-    {{ partial "footer.html" . }}
-
-    {{ partial "go-top-button.html" . }}
-
+    {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/main.js" defer></script>
