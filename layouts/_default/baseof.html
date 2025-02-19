@@ -11,29 +11,25 @@
       rel="stylesheet"
     />
 
-    {{/* 如果 Swiper 在 assets/，用 Hugo 處理 */}}
-    {{ $swiperCSS := resources.Get "css/swiper-bundle.min.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $swiperCSS.Permalink }}" integrity="{{ $swiperCSS.Data.Integrity }}" />
+    {{/* 引入Swiper */}}
 
-    {{/* 引入自有 SCSS */}}
-    {{ $styles := resources.Get "scss/main.scss" | toCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    {{/* 引入自有scss */}} {{ $styles := resources.Get "scss/main.scss" | toCSS
+    | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   </head>
   <body>
     {{ partial "header.html" . }}
 
     <main>{{ block "main" . }}{{ end }}</main>
 
-    {{ partial "footer.html" . }} 
-    {{ partial "go-top-button.html" . }}
+    {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }}
 
-    {{/* 如果 Swiper 在 assets/，用 Hugo 處理 */}}
-    {{ $swiperJS := resources.Get "js/swiper-bundle.min.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $swiperJS.Permalink }}" integrity="{{ $swiperJS.Data.Integrity }}" defer></script>
-
-    {{/* 引入 main.js */}}
-    {{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ .Site.BaseURL }}js/main.js" defer></script>
   </body>
 </html>
