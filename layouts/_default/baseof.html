@@ -20,7 +20,7 @@
 
     {{/* 引入自有scss */}} {{ $styles := resources.Get "scss/main.scss" | toCSS
     | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.min.css" />
   </head>
   <body>
     {{ partial "header.html" . }}
@@ -30,6 +30,6 @@
     {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/js/main.js" defer></script>
+    <script src="{{ .Site.BaseURL }}js/main.js" defer></script>
   </body>
 </html>
