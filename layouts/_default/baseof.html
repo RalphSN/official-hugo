@@ -20,7 +20,7 @@
 
     {{/* 引入自有scss */}} {{ $styles := resources.Get "scss/main.scss" | toCSS
     | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.min.css" />
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   </head>
   <body>
     {{ partial "header.html" . }}
