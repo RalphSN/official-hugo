@@ -11,12 +11,9 @@
       rel="stylesheet"
     />
 
-    {{/* 引入Swiper */}}
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    {{/* 引入Swiper */}} {{ $swiperCSS := resources.Get
+    "css/swiper-bundle.min.css" }}
+    <link rel="stylesheet" href="{{ $swiperCSS.RelPermalink }}" />
 
     {{/* 引入自有scss */}} {{ $styles := resources.Get "scss/main.scss" | toCSS
     | resources.Minify | resources.Fingerprint }}
@@ -27,9 +24,10 @@
 
     <main>{{ block "main" . }}{{ end }}</main>
 
-    {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }}
+    {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }} {{
+    $swiperJS := resources.Get "js/swiper-bundle.min.js" }}
+    <script src="{{ $swiperJS.RelPermalink }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/main.js" defer></script>
   </body>
 </html>
