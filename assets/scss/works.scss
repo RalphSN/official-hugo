@@ -41,19 +41,22 @@
   /* 🔹 Swiper.js 輪播樣式 */
   .works-slider {
     max-width: 1000px;
+    height: auto;
     margin: 0 auto;
+    padding: 3rem 0;
     position: relative;
+    // overflow: visible; /* 讓分頁點顯示 */
 
 
     .swiper {
       width: 100%;
       padding-bottom: 4rem;
-      overflow: visible;
     }
 
     .swiper-wrapper {
       display: flex;
       align-items: center;
+      // overflow: hidden; /*  讓外面區塊隱藏 */
     }
 
     .swiper-slide {
@@ -103,7 +106,7 @@
       .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
-        background-color: white;
+        background-color: rgb(173, 172, 172);
         transition: 0.3s ease;
         opacity: 1;
       }

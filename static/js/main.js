@@ -53,4 +53,22 @@ window.onload = function () {
     } else {
         console.error("Swiper container not found!");
     }
+
+    // **🔹 Go Top 按鈕功能**
+    const goTopButton = document.getElementById("goTopButton");
+
+    if (goTopButton) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                goTopButton.classList.add("show");
+            } else {
+                goTopButton.classList.remove("show");
+            }
+        });
+
+        goTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 };
+

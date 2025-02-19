@@ -22,13 +22,15 @@
 
   </head>
   <body>
-    <pre>{{ printf "%#v" .Site.Data.services }}</pre>
 
     {{ partial "header.html" . }}
 
     <main>{{ block "main" . }}{{ end }}</main>
 
     {{ partial "footer.html" . }}
+
+    {{ partial "go-top-button.html" . }}
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/main.js" defer></script>
