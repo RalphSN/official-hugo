@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   </head>
   <body>
+    {{ partial "preloader.html" . }}
     {{ partial "header.html" . }}
 
-    <main>{{ block "main" . }}{{ end }}</main>
+    <main class="main">{{ block "main" . }}{{ end }}</main>
 
     {{ partial "footer.html" . }} {{ partial "go-top-button.html" . }} {{
     $swiperJS := resources.Get "js/swiper-bundle.min.js" }}
