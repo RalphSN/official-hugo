@@ -8,10 +8,6 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  .works-header {
-    margin-bottom: 1rem;
-  }
-
   .works-title {
     display: inline-block;
     color: $title-dark;
@@ -19,7 +15,6 @@
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    margin-bottom: 2.5rem;
     margin-left: 5rem;
     position: relative;
   }
@@ -46,7 +41,6 @@
     padding: 3rem 0;
     position: relative;
     // overflow: visible; /* 讓分頁點顯示 */
-
 
     .swiper {
       width: 100%;
@@ -84,10 +78,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background-color 0.35s ease;
+      transition: 0.35s ease;
       &:hover {
-        text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-        transform: scale(1.05);
+        transform: scale(1.1);
       }
     }
 
@@ -99,19 +92,21 @@
       left: -8px;
     }
 
-
     /* 🔹 Swiper 分頁點 */
     .swiper-pagination {
       bottom: 10px !important;
       .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         background-color: rgb(173, 172, 172);
         transition: 0.3s ease;
         opacity: 1;
       }
       .swiper-pagination-bullet-active {
-        background-color: var(--swiper-navigation-color, var(--swiper-theme-color));;
+        background-color: var(
+          --swiper-navigation-color,
+          var(--swiper-theme-color)
+        );
       }
     }
   }
