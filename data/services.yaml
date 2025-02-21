@@ -1,4 +1,4 @@
-baseUrl: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/service-item"
+baseUrl: "assets/images/service-item"
 
 services:
   - key: "cust"

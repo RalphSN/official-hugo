@@ -1,8 +1,8 @@
 slides:
   - id: 1
-    img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png"
+    img: "assets/images/works.png"
   - id: 2
-    img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works2.png"
+    img: "assets/images/works2.png"
   - id: 3
-    img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works3.png"
+    img: "assets/images/works3.png"
 
