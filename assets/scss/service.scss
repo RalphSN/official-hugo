@@ -88,18 +88,8 @@
     //   z-index: 2;
     // }
 
-    &:last-child::after {
-      content: none;
-    }
-
-
-    // &:hover .service-item-inner {
-    //   position: fixed;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%,-50%) scale(1.5);
-    //   z-index: 100;
-    //   width: 400px;
+    // &:last-child::after {
+    //   content: none;
     // }
 
     &:hover .service-item-details {
