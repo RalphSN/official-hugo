@@ -3,7 +3,7 @@ languageCode = "zh-TW"
 title = "遊戲夢想實踐者"
 
 [params]
-logo = "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/logo-thin.png"
+logo = "assets/images/logo-thin.png"
 
 [menu]
   [[menu.main]]
