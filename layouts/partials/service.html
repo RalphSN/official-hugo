@@ -9,12 +9,16 @@
 
   <div class="service-item-container">
     {{ range site.Data.services.services }}
-      <div class="service-item {{ .key }}">
+      <div class="service-item {{ .key }}" data-key="{{ .key }}">
         <div class="service-item-inner">
           <div class="service-item-icon">
             <img src="{{ site.Data.services.baseUrl }}/{{ .key }}.svg" alt="icon">
           </div>
           <span class="service-word {{ .key }}-word">{{ .label }}</span>
+          <div class="service-item-details {{ .key }}-word">
+            {{/*  <h3>{{ .label }}</h3>  */}}
+            <p>{{ .description }}</p>
+          </div>
         </div>
       </div>
     {{ end }}

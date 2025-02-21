@@ -3,19 +3,25 @@ baseUrl: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/servic
 services:
   - key: "cust"
     label: "專業客服支援"
+    description: "快速響應玩家需求，解決各類問題，提升用戶滿意度並加強玩家忠誠度。"
 
   - key: "sdk"
     label: "高效SDK整合"
+    description: "定制化的SDK設計與整合服務，協助開發者輕鬆將遊戲功能與外部平台結合。"
 
   - key: "design"
     label: "創新軟體設計"
+    description: "專注於創新與功能優化，幫助客戶開發出高效能、易用且具有競爭力的程式。"
 
   - key: "develop"
     label: "定製遊戲開發"
+    description: "根據您的需求與創意，量身定制。從概念設計到最終實現，帶來專屬的遊戲體驗。"
 
   - key: "pub"
     label: "遊戲發行服務"
+    description: "提供遊戲發行解決方案，協助遊戲在平台上順利發行。"
 
   - key: "opt"
     label: "平台設計優化"
+    description: "為各類遊戲提供平台設計與優化服務，提升用戶互動體驗。"
 
