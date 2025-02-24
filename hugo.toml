@@ -3,7 +3,7 @@ languageCode = "zh-TW"
 title = "遊戲夢想實踐者"
 
 [params]
-logo = "assets/images/logo-thin.png"
+logo = "images/logo-thin.png"
 
 [menu]
   [[menu.main]]

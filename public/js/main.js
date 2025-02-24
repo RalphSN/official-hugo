@@ -138,7 +138,7 @@ window.onload = function () {
 
   // ** Go Top 按鈕功能**
   const goTopButton = document.getElementById("goTopButton");
-
+  console.log(goTopButton);
   if (goTopButton) {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 300) {
@@ -164,6 +164,7 @@ window.onload = function () {
     item.addEventListener("mouseenter", () => {
       isHovered = true;
       inner.style.transform = "scale(2)";
+      inner.style.zIndex = "10";
       details.style.visibility = "visible";
       setTimeout(() => {
         if (isHovered) details.style.opacity = "1";
@@ -181,6 +182,9 @@ window.onload = function () {
               inner.style.transform = "scale(1)";
               details.style.visibility = "hidden";
               details.style.opacity = "0";
+              setTimeout(() => {
+                inner.style.zIndex = "5";
+              }, 100);
             }
           }, 10);
         }

@@ -1,4 +1,4 @@
-baseUrl: "assets/images/service-item"
+baseUrl: "images/service-item"
 
 services:
   - key: "cust"

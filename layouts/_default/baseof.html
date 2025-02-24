@@ -2,9 +2,13 @@
 <html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href='{{ "virtual-dream.svg" | absURL }}'>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='{{ "virtual-dream.svg" | absURL }}'
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{  .Params.Tag }}</title>
+    <title>{{ .Params.Tag }}</title>
 
     {{/* 引入 Google Fonts */}}
     <link
@@ -21,8 +25,7 @@
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   </head>
   <body>
-    {{ partial "preloader.html" . }}
-    {{ partial "header.html" . }}
+    {{ partial "preloader.html" . }} {{ partial "header.html" . }}
 
     <main class="main">{{ block "main" . }}{{ end }}</main>
 
