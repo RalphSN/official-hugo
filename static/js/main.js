@@ -67,10 +67,13 @@ window.onload = function () {
         window.scrollTo({
           top: targetElement.offsetTop - navbarHeight,
           behavior: "smooth",
+          
         });
       }
     });
   });
+
+
 
   if (menuButton && menu && overlay && closeButton) {
     menuButton.addEventListener("click", function (event) {
@@ -138,7 +141,6 @@ window.onload = function () {
 
   // ** Go Top 按鈕功能**
   const goTopButton = document.getElementById("goTopButton");
-  console.log(goTopButton);
   if (goTopButton) {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 300) {
